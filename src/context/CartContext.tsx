@@ -1,6 +1,7 @@
 'use client'
 import React, { createContext, useReducer, useContext, useEffect, useState } from 'react';
 import { CartItem } from '@/types/CartItem';
+import Image from 'next/image';
 
 type CartState = CartItem[];
 
@@ -74,7 +75,10 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     // Render a loading indicator while initializing
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="loader">Loading...</div>
+        <div className="loader text-center">
+          <Image src="/images/Bandage.png" height={32} width={108} alt='logo' className='max-w-[70px] md:max-w-full' />
+          Loading...
+        </div>
       </div>
     );
   }

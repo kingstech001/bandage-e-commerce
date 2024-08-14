@@ -1,14 +1,23 @@
 import Image from 'next/image';
 import { products } from '@/data/products';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 
 export const BestSellers = () => {
   // Filter the products to only include bestsellers
   const bestSellers = products.filter(product => product.bestseller);
 
+  const pathname = usePathname();
+
   return (
     <div className='bg-[#FAFAFA] hidden md:block pt-[48px]'>
-      <h3 className='text-[24px] text-[#252B42] max-w-[1146px] m-auto px-[32px]'>BESTSELLER PRODUCTS</h3>
+      {pathname.startsWith('/cart') ? (
+                <h3 className='text-[24px] text-[#252B42] max-w-[1146px] m-auto px-[32px]'>PRODUCTS RELATED TO ITEMS IN YOUR CART</h3>
+            ) : (
+              <h3 className='text-[24px] text-[#252B42] max-w-[1146px] m-auto px-[32px]'>BESTSELLER PRODUCTS</h3>
+            )}
+      
       <div className=' md:grid grid-cols-auto-fill min-w-[200px] max-w-[1146px]  p-[24px] m-auto gap-[30px] border-t-[1px] border-[#ECECEC]'>
         {bestSellers.map(product => (
           <Link href={`/products/${product.id}`} key={product.id}>

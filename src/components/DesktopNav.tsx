@@ -8,6 +8,7 @@ import { BsCart } from 'react-icons/bs';
 import { useCart } from '@/context/CartContext'; // Import useCart
 import { useWishlist } from '@/context/WishlistContext'; // Import useWishlist
 
+
 const DesktopNav = () => {
     const { cart } = useCart(); // Access cart from context
     const { wishlist } = useWishlist(); // Access wishlist from context

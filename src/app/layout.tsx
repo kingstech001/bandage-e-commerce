@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Contactnav from "@/components/Contactnav";
 import CartProvider from "@/context/CartContext";
 import WishlistProvider from "@/context/WishlistContext";
+import { AuthProvider } from "@/context/AuthContext";
 // import { WishlistProvider } from "@/context/WishlistContext";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,10 +26,12 @@ export default function RootLayout({
         <Contactnav />
         <CartProvider>
           <WishlistProvider>
-            <main className="bg-[#FFFFFF]">
-              <Navbar />
-              {children}
-            </main>
+            <AuthProvider>
+              <main className="bg-[#FFFFFF]">
+                <Navbar />
+                {children}
+              </main>
+            </AuthProvider>
           </WishlistProvider>
         </CartProvider>
       </body>

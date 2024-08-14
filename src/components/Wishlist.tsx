@@ -3,7 +3,7 @@
 import React from 'react';
 import { useWishlist } from '@/context/WishlistContext'; // Adjust the path as needed
 import Image from 'next/image';
-import Link from 'next/link';
+import { MdDelete } from 'react-icons/md';
 
 const Wishlist = () => {
   const { wishlist, dispatch } = useWishlist(); // Access wishlist and dispatch from context
@@ -30,11 +30,12 @@ const Wishlist = () => {
               <h2 className="text-xl font-bold">{item.name}</h2>
               <p className="text-gray-600">${item.price.toFixed(2)}</p>
               <button
-                onClick={() => handleRemove(item.id)}
-                className="text-red-500 mt-2"
-              >
-                Remove
-              </button>
+                        onClick={() => handleRemove(item.id)}
+                        className="text-[#23A6F0] text-[12px] flex items-center font-bold"
+                      >
+                        <MdDelete />
+                        REMOVE
+                      </button>
             </div>
           </div>
         ))

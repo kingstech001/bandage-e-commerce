@@ -32,7 +32,7 @@ const MobileProductDetailNav = ({ isMenuOpen, toggleMenu }: any) => {
                 <div className='w-full bg-[#FFFFFF] flex flex-col items-center space-y-4 text-[#737373] text-[30px] font-normal pt-4'>
                     <ul className="flex-1 flex flex-col items-center gap-[10px]">
                         <li><Link href="/">Home</Link></li>
-                        <li><Link href="/shop">Shop</Link></li>
+                        <li><Link href="/products">Shop</Link></li>
                         <li><Link href="/about">About</Link></li>
                         <li><Link href="/blog">Blog</Link></li>
                         <li><Link href="/contact">Contact</Link></li>

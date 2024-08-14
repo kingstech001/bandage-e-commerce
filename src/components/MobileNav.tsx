@@ -15,14 +15,16 @@ const MobileHomeNav = ({ isMenuOpen, toggleMenu }: any) => {
             {isMenuOpen && (
                 <ul className="w-full bg-[#FFFFFF] flex flex-col items-center space-y-4 py-[82px] text-[#737373] text-[30px] font-normal gap-[30px]">
                     <li><Link href="/">Home</Link></li>
-                    <li><Link href="/product">Product</Link></li>
+                    <li><Link href="/products">Product</Link></li>
                     <li><Link href="/pricing">Pricing</Link></li>
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>
             )}
             <div className="flex items-center gap-[15px]">
                 <IoIosSearch height={24} width={24} />
-                <BsCart height={24} width={24} />
+                <Link href="/cart">
+                    <BsCart height={24} width={24} />
+                </Link>
                 <button onClick={toggleMenu}>
                     <FiBarChart height={24} width={24} className="transform -rotate-90" />
                 </button>

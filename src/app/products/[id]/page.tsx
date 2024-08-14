@@ -77,7 +77,7 @@ const ProductDetail = () => {
       <div className="bg-[#FAFAFA] px-[32px] pb-[48px]">
         <div className="max-w-[1050px] mx-auto">
           <div className="flex items-center justify-center md:justify-start py-[24px] gap-[15px]">
-            <Link href={'/'} className="text-[#252B42]">Home</Link>
+            <Link href={'/'} className="text-[#252B42] font-bold">Home</Link>
             <MdOutlineArrowForwardIos height={16} width={8.6} />
             <Link href={'#'} className="text-[#BDBDBD] text-[14px] font-bold">Shop</Link>
           </div>
