@@ -26,7 +26,7 @@ const Checkout = () => {
           placeholder="Name"
           value={formData.name}
           onChange={handleInputChange}
-          className="w-full p-2 mb-4 border border-gray-300"
+          className="w-full p-2 mb-4 border border-gray-300 rounded"
         />
         <input
           type="email"
@@ -34,7 +34,7 @@ const Checkout = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleInputChange}
-          className="w-full p-2 mb-4 border border-gray-300"
+          className="w-full p-2 mb-4 border border-gray-300 rounded"
         />
         <input
           type="text"
@@ -42,9 +42,9 @@ const Checkout = () => {
           placeholder="Address"
           value={formData.address}
           onChange={handleInputChange}
-          className="w-full p-2 mb-4 border border-gray-300"
+          className="w-full p-2 mb-4 border border-gray-300 rounded"
         />
-        <button type="submit" className="w-full bg-green-500 text-white py-2">
+        <button type="submit" className="w-full bg-green-500 text-white py-2 rounded">
           Confirm Purchase
         </button>
       </form>

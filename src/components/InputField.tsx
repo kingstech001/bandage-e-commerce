@@ -32,7 +32,7 @@ const InputField: React.FC<InputFieldProps> = ({
         placeholder={placeholder}
         onChange={onChange}
         required={required}
-        className="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+        className="p-2 border border-gray-300 rounded focus:outline-none focus:border-[#252B42]"
       />
     </div>
   );
