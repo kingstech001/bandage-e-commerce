@@ -32,6 +32,11 @@ const Navbar = () => {
         };
     }, []);
 
+    // Hide the navbar on Login and Signin pages
+    if (pathname.includes('Login') || pathname.includes('Signup')) {
+        return null;
+    }
+
     return (
         <div className={`w-full bg-white z-50 transition-transform duration-300 ease-in-out ${isFixed ? 'fixed top-0 left-0' : 'relative'}`}>
             <DesktopNav />

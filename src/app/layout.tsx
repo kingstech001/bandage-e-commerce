@@ -27,7 +27,7 @@ export default function RootLayout({
         <CartProvider>
           <WishlistProvider>
             <AuthProvider>
-              <main className="bg-[#FFFFFF] h-screen lg:h-[88.6vh]">
+              <main className="bg-[#FFFFFF]">
                 <Navbar />
                 {children}
               </main>

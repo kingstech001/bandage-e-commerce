@@ -42,10 +42,10 @@ const MobileProductDetailNav = ({ isMenuOpen, toggleMenu }: any) => {
                         <div className='flex items-center'>
                             <div className='flex items-center'>
                                 <FaRegUser className='mr-1' />
-                                <li><Link href="/login">Login</Link></li>
+                                <li><Link href="/Login">Login</Link></li>
                             </div>
                             /
-                            <li><Link href="/signup">Register</Link></li>
+                            <li><Link href="/Signup">Register</Link></li>
                         </div>
                         <li><IoIosSearch className='m-auto' /></li>
                         <li className='flex items-center gap-[2px]'><Link href="/cart" className="text-[#23A6F0] hover:text-blue-700">

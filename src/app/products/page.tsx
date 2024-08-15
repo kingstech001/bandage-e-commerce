@@ -23,6 +23,8 @@ const ProductsPage = () => {
                 src={product.imageUrl}
                 alt={product.name}
                 className="w-full object-cover mb-2 sm:mb-4"
+                width={500} 
+      height={500} 
               />
               <h2 className="text-[16px] text-center font-bold mb-1 sm:mb-2">{product.name}</h2>
               <p className="text-[14px] text-center leading-6 font-bold mb-2 text-[#737373]">

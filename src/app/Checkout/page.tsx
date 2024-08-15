@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
 
@@ -17,7 +18,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10">
+    <div className="max-w-md mx-auto mt-10 h-screen">
       <h2 className="text-2xl mb-4">Checkout</h2>
       <form onSubmit={handleSubmit}>
         <input

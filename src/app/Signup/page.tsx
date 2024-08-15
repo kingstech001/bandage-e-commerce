@@ -1,20 +1,27 @@
-'use client'
+'use client'; // Ensure this is at the top for client-side rendering
+
+import { useRouter } from 'next/navigation'; // Correct import path for Next.js 13
 import InputField from '@/components/InputField';
 import { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Link from 'next/link';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({ email: '', password: '', name: '' });
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter(); // Correctly used within client-side context
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('User Data:', formData);
-    // API Call to register user (dummy for now)
+
+    // Handle signup logic (authentication, API call, etc.)
+    // On success, redirect to another page:
+    router.push('/Login'); // Example: redirect to a dashboard or home page
   };
 
   const togglePasswordVisibility = () => {
@@ -22,7 +29,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className='max-w-md mt-[33px] m-auto h-[65vh] px-[32px] flex items-center'>
+    <div className="max-w-md m-auto h-screen md:h-[88.5vh] px-[32px] flex items-center">
       <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg border-y-[2px] border-[#252B42]">
         <h2 className="text-2xl mb-4 font-bold text-[#252B42]">Sign Up</h2>
         <form onSubmit={handleSubmit}>
@@ -66,10 +73,10 @@ const SignUp = () => {
           </button>
         </form>
         <p className="text-center text-gray-600 mt-4">
-          Don&apos;t have an account?{' '}
-          <a href="/login" className="text-blue-500 hover:underline">
+          Already have an account?{' '}
+          <Link href="/Login" className="text-blue-500 hover:underline">
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </div>

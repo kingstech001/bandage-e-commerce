@@ -34,10 +34,10 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ deliveryCharge }) => {
 
   // Handle checkout process based on user authentication
   const handleCheckout = () => {
-    if (!user) {
-      router.push('/checkout');
+    if (user) {
+      router.push('/Checkout');
     } else {
-      router.push('/login');
+      router.push('/Login');
     }
   };
 

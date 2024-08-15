@@ -52,12 +52,12 @@ const DesktopNav = () => {
                     <div className='flex items-center mr-1'>
                         <FaRegUser className='mr-1 text-[#23A6F0] hover:text-blue-700' />
                         <li>
-                            <Link href="/login" className="text-[#23A6F0] hover:text-blue-700">Login</Link>
+                            <Link href="/Login" className="text-[#23A6F0] hover:text-blue-700">Login</Link>
                         </li>
                     </div>
                     /
                     <li className='ml-1'>
-                        <Link href="/signup" className="text-[#23A6F0] hover:text-blue-700">Register</Link>
+                        <Link href="/Signup" className="text-[#23A6F0] hover:text-blue-700">Register</Link>
                     </li>
                 </div>
                 <li>

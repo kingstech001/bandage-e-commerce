@@ -74,7 +74,7 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   if (!initialized) {
     // Render a loading indicator while initializing
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center h-screen">
         <div className="loader text-center">
           <Image src="/images/Bandage.png" height={32} width={108} alt='logo' className='max-w-[70px] md:max-w-full' />
           Loading...
