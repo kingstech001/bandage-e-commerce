@@ -21,16 +21,16 @@ const ProductDetail = () => {
   const { id } = useParams();
   const router = useRouter();
 
-  if (!id) {
-    return <div>Product not found</div>;
-  }
-
+  // Parse the product ID first, even if the product is not found
   const productId = Array.isArray(id) ? parseInt(id[0]) : parseInt(id);
-  const productIndex = products.findIndex((p) => p.id === productId);
-  const product = products[productIndex];
 
+  // Call hooks unconditionally
   const { dispatch: cartDispatch } = useCart();
   const { dispatch: wishlistDispatch } = useWishlist();
+
+  // Find the product
+  const productIndex = products.findIndex((p) => p.id === productId);
+  const product = products[productIndex];
 
   const handleAddToCart = (product: Product) => {
     const cartItem: CartItem = {
@@ -43,7 +43,6 @@ const ProductDetail = () => {
       payload: cartItem,
     });
   };
-
 
   const handleAddToWishlist = () => {
     if (product) {
@@ -68,6 +67,7 @@ const ProductDetail = () => {
     }
   };
 
+  // Handle case where product is not found
   if (!product) {
     return <div>Product not found</div>;
   }
