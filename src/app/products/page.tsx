@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { products } from '@/data/products';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ProductsPage = () => {
   const [visibleProducts, setVisibleProducts] = useState(10);
@@ -18,7 +19,7 @@ const ProductsPage = () => {
         {products.slice(0, visibleProducts).map((product) => (
           <Link href={`/products/${product.id}`} key={product.id}>
             <div className="bg-white cursor-pointer flex-1 hover:shadow w-full">
-              <img
+              <Image
                 src={product.imageUrl}
                 alt={product.name}
                 className="w-full object-cover mb-2 sm:mb-4"
