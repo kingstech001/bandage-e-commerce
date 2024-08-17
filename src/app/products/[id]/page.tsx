@@ -16,26 +16,26 @@ import { Client } from '@/components/Client';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { CartItem } from '@/types/CartItem';
+import { useState } from 'react';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const router = useRouter();
 
-  // Parse the product ID first, even if the product is not found
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+
   const productId = Array.isArray(id) ? parseInt(id[0]) : parseInt(id);
 
-  // Call hooks unconditionally
   const { dispatch: cartDispatch } = useCart();
   const { dispatch: wishlistDispatch } = useWishlist();
 
-  // Find the product
   const productIndex = products.findIndex((p) => p.id === productId);
   const product = products[productIndex];
 
   const handleAddToCart = (product: Product) => {
     const cartItem: CartItem = {
       ...product,
-      quantity: 1, // Add a default quantity
+      quantity: 1,
     };
 
     cartDispatch({
@@ -48,7 +48,7 @@ const ProductDetail = () => {
     if (product) {
       wishlistDispatch({
         type: 'ADD_TO_WISHLIST',
-        payload: { ...product, quantity: 1 }, // Assuming initial quantity is 1 or adjust as needed
+        payload: { ...product, quantity: 1 },
       });
     }
   };
@@ -67,7 +67,14 @@ const ProductDetail = () => {
     }
   };
 
-  // Handle case where product is not found
+  const handleViewImage = () => {
+    setIsImageModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsImageModalOpen(false);
+  };
+
   if (!product) {
     return <div>Product not found</div>;
   }
@@ -133,7 +140,10 @@ const ProductDetail = () => {
                   >
                     <IoIosHeartEmpty />
                   </button>
-                  <button className="bg-[#FFFFFF] text-[#252B42] hover:bg-[#252B42] hover:text-[#FFFFFF] p-2 rounded-[100%] border-[1px] border-[#E8E8E8]">
+                  <button
+                    onClick={handleViewImage}
+                    className="bg-[#FFFFFF] text-[#252B42] hover:bg-[#252B42] hover:text-[#FFFFFF] p-2 rounded-[100%] border-[1px] border-[#E8E8E8]"
+                  >
                     <CgEyeAlt />
                   </button>
                 </div>
@@ -142,6 +152,23 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal for Viewing Product Image */}
+      {isImageModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <div className="relative">
+            <button onClick={handleCloseModal} className="absolute top-4 right-5 text-xl font-bold">X</button>
+            <Image
+              src={product.imageUrl}
+              alt={product.name}
+              width={400}
+              height={400}
+              className="rounded max-w-full sm:max-w-[700px]"
+            />
+          </div>
+        </div>
+      )}
+
       <Description />
       <BestSellers />
       <Client />

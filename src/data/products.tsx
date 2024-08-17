@@ -15,7 +15,7 @@ export interface Product {
   export const products: Product[] = [
     {
       id: 1,
-      name: 'Graphic Design',
+      name: 'chair',
       description: 'Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.',
       price: 120.99,
       price2: 45.99,

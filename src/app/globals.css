@@ -30,4 +30,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Hide scrollbar for WebKit browsers */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for Internet Explorer and Edge */
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
 }
