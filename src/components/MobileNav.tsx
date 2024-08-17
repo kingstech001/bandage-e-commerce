@@ -51,13 +51,13 @@ const MobileHomeNav = ({ isMenuOpen, toggleMenu }: any) => {
     };
 
     return (
-        <nav className='flex justify-between md:hidden items-center px-[32px] py-[24px]'>
+        <nav className='flex justify-between md:hidden items-start px-[32px] py-[24px]'>
             <div>
                 <Link href="/">
                     <Image src={"/images/Bandage.png"} height={32} width={108} alt='logo' className='max-w-[70px] md:max-w-full' />
                 </Link>
             </div>
-            <div className="relative flex flex-row-reverse items-center gap-[5px]">
+            <div className="relative">
                 <div className="flex items-center gap-[15px]">
                     <button onClick={handleSearchIconClick}>
                         <IoIosSearch height={24} width={24} />
@@ -72,17 +72,17 @@ const MobileHomeNav = ({ isMenuOpen, toggleMenu }: any) => {
 
                 {/* Search Box */}
                 {isSearchOpen && (
-                    <div ref={dropdownRef} className=" relative bg-white border border-gray-300  max-w-[150px] rounded-md z-10  ">
+                    <div ref={dropdownRef} className="absolute top-[35px] right-[-32px] bg-white border-[0.5px] border-gray-300 shadow-lg w-screen  mt-2 rounded-md z-10 max-h-80 overflow-y-auto scrollbar-hidden">
                         <input
                             ref={searchInputRef}
                             type="text"
                             placeholder="Search..."
                             value={searchQuery}
                             onChange={handleInputChange}
-                            className="w-full border focus:outline-[#23A6F0] focus:border-none rounded-md p-2"
+                            className="w-full border-none focus:outline-[#23A6F0] focus:border-none rounded-md p-2"
                         />
                         {filteredProducts.length > 0 && (
-                            <ul className="space-y-1 absolute left-0 max-h-80 overflow-y-auto scrollbar-hidden bg-white w-full">
+                            <ul className="space-y-1">
                                 {filteredProducts.map(product => (
                                     <li key={product.id} className="p-2 border-b border-gray-200 hover:bg-gray-100">
                                         <Link href={`/products/${product.id}`} className="block">
