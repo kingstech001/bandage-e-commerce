@@ -57,6 +57,14 @@ const MobileHomeNav = ({ isMenuOpen, toggleMenu }: any) => {
                     <Image src={"/images/Bandage.png"} height={32} width={108} alt='logo' className='max-w-[70px] md:max-w-full' />
                 </Link>
             </div>
+            {isMenuOpen && (
+                <ul className="w-full bg-[#FFFFFF] flex flex-col items-center space-y-4 py-[82px] text-[#737373] text-[30px] font-normal gap-[30px]">
+                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/products">Product</Link></li>
+                    <li><Link href="/pricing">Pricing</Link></li>
+                    <li><Link href="/contact">Contact</Link></li>
+                </ul>
+            )}
             <div className="relative">
                 <div className="flex items-center gap-[15px]">
                     <button onClick={handleSearchIconClick}>
@@ -95,15 +103,6 @@ const MobileHomeNav = ({ isMenuOpen, toggleMenu }: any) => {
                     </div>
                 )}
             </div>
-
-            {isMenuOpen && (
-                <ul className="w-full bg-[#FFFFFF] flex flex-col items-center space-y-4 py-[82px] text-[#737373] text-[30px] font-normal gap-[30px]">
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/products">Product</Link></li>
-                    <li><Link href="/pricing">Pricing</Link></li>
-                    <li><Link href="/contact">Contact</Link></li>
-                </ul>
-            )}
         </nav>
     );
 };
