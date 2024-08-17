@@ -2,10 +2,14 @@
 
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Success from '@/components/Success'; // Import Success component
 
 const Checkout = () => {
   const [formData, setFormData] = useState({ name: '', email: '', address: '' });
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const { cart } = useCart();
+  const router = useRouter();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,10 +19,16 @@ const Checkout = () => {
     e.preventDefault();
     console.log('Checkout Data:', formData, cart);
     // Process checkout (dummy for now)
+    setIsSuccessOpen(true); // Show success overlay
+  };
+
+  const handleCloseOverlay = () => {
+    setIsSuccessOpen(false); // Close the overlay
+    router.push('/'); // Optionally redirect to another page
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 h-screen">
+    <div className="relative max-w-md mx-auto mt-10 h-screen">
       <h2 className="text-2xl mb-4">Checkout</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -49,6 +59,13 @@ const Checkout = () => {
           Confirm Purchase
         </button>
       </form>
+
+      {/* Success Overlay */}
+      {isSuccessOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-70 z-50">
+          <Success onClose={handleCloseOverlay} />
+        </div>
+      )}
     </div>
   );
 };
