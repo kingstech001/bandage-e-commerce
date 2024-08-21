@@ -51,7 +51,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="relative max-w-md mx-auto mt-10 h-screen">
+    <div className="relative max-w-md mx-auto mt-10 h-screen px-[32px]">
       <h2 className="text-2xl mb-4">Checkout</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
