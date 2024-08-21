@@ -70,9 +70,9 @@ const DesktopNav = () => {
                     <li>
                         <Link href="/" className="text-gray-700 hover:text-blue-500">Home</Link>
                     </li>
-                    <li className='flex items-center'>
-                        <Link href="/products" className="text-gray-700 hover:text-blue-500">Shop</Link>
-                        <IoIosArrowDown className='ml-1 text-gray-700 hover:text-blue-500' />
+                    <li className='flex items-center text-gray-700 hover:text-blue-500'>
+                        <Link href="/products" >Shop</Link>
+                        <IoIosArrowDown className='ml-1'/>
                     </li>
                     <li>
                         <Link href="/about" className="text-gray-700 hover:text-blue-500">About</Link>
@@ -92,10 +92,10 @@ const DesktopNav = () => {
             <div className="relative">
                 <ul className="hidden md:flex items-center space-x-4 text-[#23A6F0]">
                     <div className='flex items-center'>
-                        <div className='flex items-center mr-1'>
-                            <FaRegUser className='mr-1 text-[#23A6F0] hover:text-blue-700' />
+                        <div className='flex items-center mr-1 text-[#23A6F0] hover:text-blue-700'>
+                            <FaRegUser className='mr-1' />
                             <li>
-                                <Link href="/Login" className="text-[#23A6F0] hover:text-blue-700">Login</Link>
+                                <Link href="/Login" className="">Login</Link>
                             </li>
                         </div>
                         /

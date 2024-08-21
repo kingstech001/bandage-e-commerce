@@ -1,5 +1,3 @@
-// /src/types/auth.ts
-
 export interface AuthContextType {
   user: string | null;
   isAuthenticated: boolean;
