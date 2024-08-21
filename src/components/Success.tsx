@@ -6,7 +6,7 @@ interface SuccessProps {
 
 const Success = ({ onClose }: SuccessProps) => {
     return (
-      <div className="relative max-w-md mx-auto p-6 bg-white rounded shadow-lg text-center">
+      <div className="relative max-w-md lg:mx-auto p-6 bg-white rounded shadow-lg text-center mx-[32px]">
         <button
           onClick={onClose}
           className="absolute top-2 right-5 text-gray-500 hover:text-gray-700 text-[20px] font-bold"
