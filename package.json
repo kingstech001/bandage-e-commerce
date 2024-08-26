@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.5.0",
+    "@supabase/supabase-js": "^2.45.2",
     "cookie-parser": "^1.4.6",
     "js-cookie": "^3.0.5",
     "next": "14.2.5",

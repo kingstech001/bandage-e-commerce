@@ -37,7 +37,7 @@ const CartPage = () => {
         </div>
         <div className='max-w-[1161px] mx-auto lg:flex gap-[56px]'>
 
-          <div className='max-w-[654px] bg-[#FFFFFF] flex-1 mx-auto mb-4'>
+          <div className='max-w-[654px] bg-[#FFFFFF] flex-1 mx-auto'>
             <div className="p-4 rounded-[4px]">
               <h3 className='text-[24px] text-[#121517] font-semibold'>Shopping Cart</h3>
               <div className='hidden md:flex items-center justify-between bg-[#3B4148] rounded-tr-[4px] rounded-tl-[4px] shadow-[#00000024] px-[24px] py-[17px] mt-[16px] mb-[32px]'>
